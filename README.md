@@ -43,4 +43,4 @@ for example
 5. GET /top
 - Returns top movies already in the database ranking based on a number of comments added to the movie
  in the specified date range. The response includes the ID of the movie(DB id), rank and total number of comments (in the specified date range)
- - Date range is specified like this example --> `start_date=2020-03-10` and `end_date=2020-03-15`. Month can be 0 padded(ie. *05*)
+ - Date range is specified like this example --> `start_date=2020-03-10` and `end_date=2020-03-15`.
