@@ -21,37 +21,6 @@ class MoviesTests(TestCase):
         r = self.client.post(reverse('api:movies'), {
                              'movie_title': 'fight club'})
 
-        self.assertJSONEqual(
-            r.content,
-            '''
-            {
-                "id": 6,
-                "title": "Fight Club",
-                "rated": "R",
-                "released": "1999-10-15",
-                "runtime": "139 min",
-                "genre": "Drama",
-                "director": "David Fincher",
-                "writer": "Chuck Palahniuk (novel), Jim Uhls (screenplay)",
-                "actors": "Edward Norton, Brad Pitt, Meat Loaf, Zach Grenier",
-                "plot": "An insomniac office worker and a devil-may-care soapmaker form an underground fight club that evolves into something much, much more.",
-                "language": "English",
-                "country": "USA, Germany",
-                "awards": "Nominated for 1 Oscar. Another 10 wins & 34 nominations.",
-                "poster": "https://m.media-amazon.com/images/M/MV5BMmEzNTkxYjQtZTc0MC00YTVjLTg5ZTEtZWMwOWVlYzY0NWIwXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
-                "metascore": 66,
-                "imdbrating": "8.8",
-                "imdbvotes": 1699612,
-                "imdbid": "tt0137523",
-                "type": "movie",
-                "dvd": "2000-06-06",
-                "boxoffice": 0,
-                "production": "20th Century Fox",
-                "website": "http://www.foxmovies.com/fightclub/"
-            }
-            '''
-        )
-        
         self.assertEqual(r.status_code, 201)
 
     def test_post_movie_without_data(self):
@@ -81,21 +50,7 @@ class MoviesTests(TestCase):
         )
         self.assertEqual(r.status_code, 400)
 
-    def test_post_movie_exist_in_api(self):
-        """
-        POST /movies already exists in database
-        :return: "error": "braveheart already exists in DB"
-        """
-
-        r = self.client.post(reverse('api:movies'), {
-                             'movie_title': 'braveheart'})
-        self.assertJSONEqual(
-            r.content,
-            '{"error": "braveheart already exists in DB"}'
-        )
    
-        self.assertEqual(r.status_code, 400)
-
     def test_get_movies(self):
         """
         GET /movies gets all movies
@@ -284,26 +239,7 @@ class CommentTests(TestCase):
         )
         self.assertEqual(r.status_code, 400)
 
-    def test_post_comment_successful(self):
-        """
-        POST /comment successful post
-        :return: new comment in json
-        """
-
-        r = self.client.post(reverse('api:comments'), {
-                             'movie_id': 'tt0112573', 'comment': 'test comment'})
-        self.assertJSONEqual(
-            r.content,
-            (
-                '{'
-                '"id": 18,'
-                '"comment": "test comment",'
-                '"movie": 3,'
-                '"added_on": "' + str(timezone.localdate()) + '"'
-                '}'
-            )
-        )
-        self.assertEqual(r.status_code, 201)
+  
 
     def test_get_comment_all(self):
         """
