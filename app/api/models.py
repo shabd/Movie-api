@@ -1,3 +1,4 @@
+from django.utils import timezone
 from django.db import models
 
 
@@ -27,6 +28,19 @@ class Movie(models.Model):
     boxoffice = models.IntegerField()
     production = models.CharField(max_length=100)
     website = models.URLField()
+
+    @classmethod
+    def get_all(cls):
+        return cls.objects.all()
+
+
+class Comment(models.Model):
+    def __str__(self):
+        return self.comment
+
+    comment = models.TextField()
+    movie = models.ForeignKey(Movie, on_delete=models.CASCADE, null=True)
+    added_on = models.DateField(default=timezone.localdate)
 
     @classmethod
     def get_all(cls):

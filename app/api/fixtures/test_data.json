@@ -1,0 +1,258 @@
+[{
+        "model": "api.movie",
+        "pk": 1,
+        "fields": {
+            "title": "Hell",
+            "rated": "R",
+            "released": "2012-07-10",
+            "runtime": "89 min",
+            "genre": "Horror, Sci-Fi, Thriller",
+            "director": "Tim Fehlbaum",
+            "writer": "Tim Fehlbaum (screenplay), Oliver Kahl (screenplay), Thomas W\u00f6bke (screenplay)",
+            "actors": "Lilo Baur, Marco Calamandrei, Lisa Vicari, Lars Eidinger",
+            "plot": "In the not too distant future, people struggle to survive their greatest enemy, the sun.",
+            "language": "German, French",
+            "country": "Germany, Switzerland",
+            "awards": "11 wins & 15 nominations.",
+            "poster": "https://m.media-amazon.com/images/M/MV5BMTgxMDA3OTUwNF5BMl5BanBnXkFtZTgwNTEzMTg5MDE@._V1_SX300.jpg",
+            "metascore": 0,
+            "imdbrating": "5.9",
+            "imdbvotes": 11241,
+            "imdbid": "tt1643222",
+            "type": "movie",
+            "dvd": "2012-08-21",
+            "boxoffice": 0,
+            "production": "Arc Entertainment",
+            "website": "N/A"
+        }
+    },
+    {
+        "model": "api.movie",
+        "pk": 2,
+        "fields": {
+            "title": "The Broken Circle Breakdown",
+            "rated": "Not Rated",
+            "released": "2012-10-10",
+            "runtime": "111 min",
+            "genre": "Drama, Music, Romance",
+            "director": "Felix van Groeningen",
+            "writer": "Johan Heldenbergh (play), Mieke Dobbels (play), Carl Joos (adaptation), Felix van Groeningen (adaptation), Charlotte Vandermeersch (collaboration on screenplay)",
+            "actors": "Johan Heldenbergh, Veerle Baetens, Nell Cattrysse, Geert Van Rampelberg",
+            "plot": "Elise and Didier fall in love at first sight, in spite of their differences. He talks, she listens. He's a romantic atheist, she's a religious realist. When their daughter becomes seriously ill, their love is put on trial.",
+            "language": "Flemish, English, Dutch",
+            "country": "Belgium, Netherlands",
+            "awards": "Nominated for 1 Oscar. Another 33 wins & 24 nominations.",
+            "poster": "https://m.media-amazon.com/images/M/MV5BMTQzMzg2Nzg2MF5BMl5BanBnXkFtZTgwNjUzNzIzMDE@._V1_SX300.jpg",
+            "metascore": 70,
+            "imdbrating": "7.8",
+            "imdbvotes": 36281,
+            "imdbid": "tt2024519",
+            "type": "movie",
+            "dvd": "2014-03-11",
+            "boxoffice": 0,
+            "production": "Tribeca Film",
+            "website": "http://tribecafilm.com/brokencircle"
+        }
+    },
+    {
+        "model": "api.movie",
+        "pk": 3,
+        "fields": {
+            "title": "Braveheart",
+            "rated": "R",
+            "released": "1995-03-24",
+            "runtime": "178 min",
+            "genre": "Biography, Drama, History, War",
+            "director": "Mel Gibson",
+            "writer": "Randall Wallace",
+            "actors": "James Robinson, Sean Lawlor, Sandy Nelson, James Cosmo",
+            "plot": "When his secret bride is executed for assaulting an English soldier who tried to rape her, William Wallace begins a revolt against King Edward I of England.",
+            "language": "English, French, Latin, Scottish Gaelic, Italian",
+            "country": "USA, Ireland",
+            "awards": "Won 5 Oscars. Another 20 wins & 28 nominations.",
+            "poster": "https://m.media-amazon.com/images/M/MV5BMzkzMmU0YTYtOWM3My00YzBmLWI0YzctOGYyNTkwMWE5MTJkXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
+            "metascore": 68,
+            "imdbrating": "8.4",
+            "imdbvotes": 884802,
+            "imdbid": "tt0112073",
+            "type": "movie",
+            "dvd": "2000-08-29",
+            "boxoffice": 0,
+            "production": "Paramount Pictures",
+            "website": "https://www.paramount.com/movies/braveheart"
+        }
+    },
+    {
+        "model": "api.movie",
+        "pk": 4,
+        "fields": {
+            "title": "Hangover",
+            "rated": "N/A",
+            "released": "2010-06-18",
+            "runtime": "135 min",
+            "genre": "Comedy",
+            "director": "Prabhat Roy",
+            "writer": "Prabhat Roy (story)",
+            "actors": "Sayantika Banerjee, Biplab Chatterjee, Prasenjit Chatterjee, Supriyo Dutta",
+            "plot": "A man with a roving eye battles his midlife crisis.",
+            "language": "Bengali",
+            "country": "India",
+            "awards": "N/A",
+            "poster": "https://m.media-amazon.com/images/M/MV5BZWYwYjE2NWQtZmMwMi00YWVhLTgwOGMtODQ4NDQ2NTA4Y2ZkXkEyXkFqcGdeQXVyNjA3OTI5MjA@._V1_SX300.jpg",
+            "metascore": 0,
+            "imdbrating": "6.1",
+            "imdbvotes": 128,
+            "imdbid": "tt1737174",
+            "type": "movie",
+            "dvd": null,
+            "boxoffice": 0,
+            "production": "N/A",
+            "website": "N/A"
+        }
+    },
+    {
+        "model": "api.movie",
+        "pk": 5,
+        "fields": {
+            "title": "Crazy",
+            "rated": "N/A",
+            "released": "2000-06-08",
+            "runtime": "97 min",
+            "genre": "Drama",
+            "director": "Hans-Christian Schmid",
+            "writer": "Hans-Christian Schmid (screenplay), Michael Gutmann (screenplay), Benjamin Lebert (novel)",
+            "actors": "Robert Stadlober, Tom Schilling, Oona-Devi Liebich, Julia Hummer",
+            "plot": "Benjamin is a 16 year old, paralyzed on one side of his body, with lousy grades in math, who switches to a boarding school to reach grammar school. Acclimatization to the new environment is...",
+            "language": "German",
+            "country": "Germany",
+            "awards": "5 wins & 8 nominations.",
+            "poster": "https://m.media-amazon.com/images/M/MV5BN2ZkNzIyMGUtMDE0ZS00MTQ5LTk0ZjItYzM2NjFiZTRlMDJlL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyMzA3Njg4MzY@._V1_SX300.jpg",
+            "metascore": 0,
+            "imdbrating": "6.6",
+            "imdbvotes": 3763,
+            "imdbid": "tt0215681",
+            "type": "movie",
+            "dvd": null,
+            "boxoffice": 0,
+            "production": "TV/PRO Productions",
+            "website": "http://www.crazy-der-film.de"
+        }
+    },
+    {
+        "model": "api.comment",
+        "pk": 5,
+        "fields": {
+            "comment": "just a comment",
+            "movie": 4,
+            "added_on": "2022-03-20"
+        }
+    },
+    {
+        "model": "api.comment",
+        "pk": 6,
+        "fields": {
+            "comment": "another comment",
+            "movie": 3,
+            "added_on": "2022-03-20"
+        }
+    },
+    {
+        "model": "api.comment",
+        "pk": 7,
+        "fields": {
+            "comment": "the best comment ever",
+            "movie": 4,
+            "added_on": "2022-03-20"
+        }
+    },
+    {
+        "model": "api.comment",
+        "pk": 8,
+        "fields": {
+            "comment": "the best lala ever",
+            "movie": 2,
+            "added_on": "2022-03-20"
+        }
+    },
+    {
+        "model": "api.comment",
+        "pk": 9,
+        "fields": {
+            "comment": "a wrong comment",
+            "movie": 2,
+            "added_on": "2022-03-20"
+        }
+    },
+    {
+        "model": "api.comment",
+        "pk": 10,
+        "fields": {
+            "comment": "comment 11",
+            "movie": 2,
+            "added_on": "2022-03-20"
+        }
+    },
+    {
+        "model": "api.comment",
+        "pk": 11,
+        "fields": {
+            "comment": "comment 12",
+            "movie": 2,
+            "added_on": "2022-03-20"
+        }
+    },
+    {
+        "model": "api.comment",
+        "pk": 12,
+        "fields": {
+            "comment": "the best lala ever",
+            "movie": 2,
+            "added_on": "2022-03-20"
+        }
+    },
+    {
+        "model": "api.comment",
+        "pk": 13,
+        "fields": {
+            "comment": "the best lala ever",
+            "movie": 2,
+            "added_on": "2022-03-20"
+        }
+    },
+    {
+        "model": "api.comment",
+        "pk": 14,
+        "fields": {
+            "comment": "a silly comment",
+            "movie": 5,
+            "added_on": "2022-03-20"
+        }
+    },
+    {
+        "model": "api.comment",
+        "pk": 15,
+        "fields": {
+            "comment": "a billy comment",
+            "movie": 5,
+            "added_on": "2022-03-20"
+        }
+    },
+    {
+        "model": "api.comment",
+        "pk": 16,
+        "fields": {
+            "comment": "a billy comment",
+            "movie": 1,
+            "added_on": "2022-03-20"
+        }
+    },
+    {
+        "model": "api.comment",
+        "pk": 17,
+        "fields": {
+            "comment": "a dilly comment",
+            "movie": 5,
+            "added_on": "2022-03-20"
+        }
+    }
+]

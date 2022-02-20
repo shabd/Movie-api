@@ -3,16 +3,16 @@ from datetime import datetime
 
 from django.db.models import Count, Window, F
 from django.db.models.functions import DenseRank
-from app.api.serializers import MovieSerializer
-from app.app import settings
+from api.serializers import CommentSerializer, MovieSerializer, TopMovieSerializer
+from app import settings
 from rest_framework import status
 from rest_framework.views import APIView
 from rest_framework.response import Response
 
 import requests
 
-from .models import Movie
-# Create your views here.
+from .models import Movie ,Comment
+
 
 
 class MoviesView(APIView):
@@ -109,3 +109,78 @@ class MoviesView(APIView):
 
             serializer = MovieSerializer(qs, many=True)
             return Response(serializer.data)
+
+
+class CommentsView(APIView):
+    def post(self, request, format=None):
+
+        movie_id = request.data.get('movie_id')
+        comment = request.data.get('comment')
+
+        if not movie_id or not comment:
+            response = {
+                'error': 'Please provide movie ID and comment'
+            }
+            return Response(response, status.HTTP_400_BAD_REQUEST)
+
+        # Validate movie exists
+        qs = Movie.get_all()
+        if movie_id not in [str(q) for q in qs]:
+            response = {
+                'error': f'Movie with movie id {movie_id}, doesn\'t exist in DB. Make sure to enter imdb id'
+            }
+            return Response(response, status.HTTP_400_BAD_REQUEST)
+
+        movie = Movie.objects.get(imdbid=movie_id)
+        new_comment = Comment(comment=comment, movie=movie)
+        new_comment.save()
+
+        # Return newly saved comment
+        serializer = CommentSerializer(new_comment)
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+    def get(self, request, format=None):
+        movie_id = request.GET.get('movie_id')
+
+        # Filter
+        if movie_id:
+            qs = Comment.objects.filter(movie__imdbid=movie_id)
+            serializer = CommentSerializer(qs, many=True)
+            return Response(serializer.data)
+
+        serializer = CommentSerializer(Comment.get_all(), many=True)
+        return Response(serializer.data)
+
+
+class TopRatedMovieView(APIView):
+    def create_qs_for_top(self, with_filter=False, start_date='', end_date=''):
+        """"
+        Creates query string according to date filter
+        :param start_date: string
+        :param end_date: string
+            Returns the Top Rated movie with most comments
+        """
+        qs = Movie.objects
+        if with_filter:
+            qs = qs.filter(comment__added_on__range=(start_date, end_date))
+
+        return qs.annotate(total_comments=Count('comment__comment'),
+                           rank=Window(
+                               expression=DenseRank(),
+                               order_by=F('total_comments').desc(),
+        )
+        ).values('id', 'total_comments', 'rank')
+
+    def get(self, request, format=None):
+        start_date = request.GET.get('start_date')
+        end_date = request.GET.get('end_date')
+
+        qs = self.create_qs_for_top()
+
+        # Filter by specified date range, if provided
+        if start_date and end_date:
+            qs = self.create_qs_for_top(
+                with_filter=True, start_date=start_date, end_date=end_date)
+
+        serializer = TopMovieSerializer(qs, many=True)
+        return Response(serializer.data)
