@@ -6,14 +6,13 @@ A Movie Api created with Django and Django-rest framework
 
 
 
-<!-- Running the appliction  -->
+# Runing the appliction  
 - docker-compose up 
 
-
-<!-- To Run tests -->
+ # To Run tests 
 - docker-compose run app sh -c "python manage.py test"
 
-<!-- End points -->
+# End points 
 1. Post /movies
 - A movie title must be surplied .eg
 {
