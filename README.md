@@ -2,6 +2,7 @@
 
 A Movie Api created with Django and Django-rest framework
 - the application makes use of travis CI
+- As well as Docker
 
 
 
